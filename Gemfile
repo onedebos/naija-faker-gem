@@ -1,5 +1,5 @@
 source 'https://rubygems.org' do
-    gem 'codecov',
+    gem 'codecov'
     gem 'rspec'
     gem 'simplecov'
 end
