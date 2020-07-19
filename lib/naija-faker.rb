@@ -1,5 +1,8 @@
 require './data/data.rb'
+
 class NaijaFaker
+    WRONG_KEY_MESSAGE = "Did you forget to specify the key:"
+
     def self.fname(start_with=nil)
         fname_or_lname(start_with, DataBank.first_names)
     end
@@ -19,41 +22,89 @@ class NaijaFaker
         min = 0
         max = DataBank.states.length
         position = rand(min...max)
-        DataBank.states[position].downcase
+        DataBank.states[position]
     end
 
     def self.bank
         min = 0
         max = DataBank.banks.length
         position = rand(min...max)
-        DataBank.banks[position].downcase
+        DataBank.banks[position]
     end
 
-    # TODO: allow options for fname, lname, min, max, state
+    def self.phone_number
+        min = 0
+        max = DataBank.phone_numbers.length
+        position = rand(min..max)
+        DataBank.phone_numbers[position]
+    end
+
     def self.person(options=nil)
-        if !options
+        fname = fname()
+        lname = lname()
+        state = state()
+        bank = bank()
+        phone_number = phone_number()
+        if !options # returns a map
             min = 18
             max = 50
-            fname = fname()
-            lname = lname()
             age = rand(min..max)
-            state = state()
-            bank = bank()
             data = {
                 "fname": fname,
                 "lname": lname,
                 "age": age,
                 "state": state,
                 "bank": bank,
+                "phone_number": phone_number
+            } 
+        else
+            return "#{WRONG_KEY_MESSAGE} min/max?" if options[:min].nil? || options[:max].nil?
+            min = options[:min]
+            max = options[:max]
+            age = rand(min..max)
+            data = {
+                "fname": fname,
+                "lname": lname,
+                "age": age,
+                "state": state,
+                "bank": bank,
+                "phone_number": phone_number
             }
-            # returns a map
-            data
         end
+    end
+
+    def self.person_list(options=nil)
+        persons = []
+        list_count = 5
+        if options
+            return "#{WRONG_KEY_MESSAGE} 'amt?'" if options[:amt].nil?
+            list_count = options[:amt]
+        end
+
+        (1..list_count).each do
+            person = person()
+            persons << person
+        end
+      persons  
+    end
+
+    def self.name_list(options=nil)
+     list_count = 5
+     name_list = []
+      if options
+        return "#{WRONG_KEY_MESSAGE} 'amt?'" if options[:amt].nil?
+        list_count = options[:amt]
+      end
+      (1..list_count).each do
+        name = fname()
+        name_list << name
+      end
+      name_list
     end
 
     
 
-    private
+  private
     def self.fname_or_lname(start_with, which_name)
         min = 0
         max = which_name.length
@@ -74,5 +125,4 @@ class NaijaFaker
     end
 end
 
-p NaijaFaker.state
 
