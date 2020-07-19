@@ -1,3 +1,5 @@
+require 'simplecov'
+SimpleCov.start
 require './naija-faker'
 require './data/data.rb'
 RSpec.describe NaijaFaker do 

@@ -98,8 +98,9 @@ NaijaFaker.name_list(amt: 5)
 - To run the test
 
 ```ruby
-#install rspec:
+#install rspec and simplecov:
 gem install rspec
+gem install simplecov
 
 # in /lib, run
 rspec naija-faker-spec.rb
