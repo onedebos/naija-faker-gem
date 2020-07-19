@@ -104,10 +104,7 @@ RSpec.describe NaijaFaker do
     it "returns a Nigerian phone number" do
         phone_number = NaijaFaker.phone_number
         expect(phone_number.length).to eq(17)
+        expect(phone_number.class).to eq(String)
     end
   end
-
-  
-
-
 end 
