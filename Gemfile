@@ -1,3 +1,5 @@
-gem 'codecov', require: false, group: 'test'
-gem 'rspec'
-gem 'simplecov'
+source 'https://rubygems.org' do
+    gem 'codecov',
+    gem 'rspec'
+    gem 'simplecov'
+end
