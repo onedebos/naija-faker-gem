@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/onedebos/naija-faker-gem.svg?branch=master)](https://travis-ci.com/onedebos/naija-faker-gem)[![codecov](https://codecov.io/gh/onedebos/naija-faker-gem/branch/master/graph/badge.svg)](https://codecov.io/gh/onedebos/naija-faker-gem)
+
 # naija-faker
 
 This gem helps you generate fake Nigerian data on the fly for use in your projects.
