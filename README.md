@@ -103,7 +103,7 @@ gem install rspec
 gem install simplecov
 
 # in /lib, run
-rspec naija-faker-spec.rb
+bundle exec rspec spec/naija-faker.spec.rb
 ```
 
 ## Authors

@@ -1,4 +1,4 @@
-require './data/data.rb'
+require 'data.rb'
 
 class NaijaFaker
     WRONG_KEY_MESSAGE = "Did you forget to specify the key:"

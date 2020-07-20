@@ -1,5 +1,7 @@
 source 'https://rubygems.org' do
-    gem 'codecov'
+    gem 'codecov', require: false, group: 'test'
     gem 'rspec'
-    gem 'simplecov'
+    gem 'simplecov', require: false, group: :test
+    # gem 'NexposeRunner'
+    gem 'bundler'
 end

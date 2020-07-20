@@ -1,11 +1,12 @@
 require 'simplecov'
 SimpleCov.start
+
 require 'codecov'
 SimpleCov.formatter = SimpleCov::Formatter::Codecov
 
 
-require './naija-faker'
-require './data/data.rb'
+require 'naija-faker.rb'
+
 RSpec.describe NaijaFaker do 
   describe 'fname' do
     it 'returns a string with a first name' do 

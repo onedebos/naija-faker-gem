@@ -6,9 +6,9 @@ Gem::Specification.new do |s|
     s.description = "A gem that allows you generate fake Nigerian data. Generate states, bank names, names and more!"
     s.authors     = ["Adebola Adeniran"]
     s.email       = 'adebola.rb.js@gmail.com'
-    s.files       = ["lib/naija-faker.rb", "lib/data/data.rb"]
+    s.files       = ["lib/naija-faker.rb", "lib/data.rb"]
     s.homepage    =
-      'https://rubygems.org/gems/naija-faker'
+      'https://github.com/onedebos/naija-faker-gem'
     s.license       = 'MIT'
   end
   
